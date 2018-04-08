@@ -3,12 +3,25 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {
   Button,
+  FlatList,
+  StyleSheet,
   Text,
   TextInput,
   View
 } from 'react-native';
 
 import repoActions from '../../actions';
+
+console.disableYellowBox = true;
+
+const styles = StyleSheet.create({
+  flatListItem: {
+    backgroundColor: 'gray',
+    color: 'black',
+    padding: 10,
+    fontSize: 16
+  }
+});
 
 class Feed extends Component {
   constructor(props) {
@@ -37,11 +50,20 @@ class Feed extends Component {
 
   render() {
     const { searchTerm } = this.state;
+    const { repos } = this.props;
     return (
       <View>
         <Text>Please input search term</Text>
         <TextInput onChangeText={ this.onChangeSearchTerm } value={ searchTerm } />
         <Button onPress={ this.handleSearchRepos } title="Search repos">Click me!</Button>
+         <FlatList 
+          data={ repos }
+          renderItem={({ item }) => {
+            return (
+              <Text style={ styles.flatListItem }>{ item.name }</Text>
+            )
+          }}
+        />
       </View>
     )
   }
