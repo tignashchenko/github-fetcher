@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
 
 export default class SignIn extends Component {
   render() {
+    const { navigation } = this.props;
     return (
       <View style={ styles.container }>
         <View style={ styles.logoContainer }>
@@ -49,7 +50,10 @@ export default class SignIn extends Component {
             style={ styles.logo } 
           />
           <Text style={ styles.appTitle }>An app for finding GitHub repositories</Text>
-          <TouchableOpacity style={ styles.signInButton }>
+          <TouchableOpacity 
+            style={ styles.signInButton }
+            onPress={() => navigation.navigate('Feed')}
+          >
             <Text style={ styles.signInButtonText }>Sign in with GitHub</Text>
           </TouchableOpacity>
         </View>
