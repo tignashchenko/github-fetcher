@@ -7,6 +7,7 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  TouchableOpacity,
   View
 } from 'react-native';
 
@@ -15,10 +16,17 @@ import repoActions from '../../actions';
 console.disableYellowBox = true;
 
 const styles = StyleSheet.create({
+  button: {
+    
+  },
+  searchTitle: {
+    textAlign: 'center',
+    marginBottom: 10
+  },
   flatListItem: {
-    backgroundColor: 'gray',
-    color: 'black',
-    padding: 10,
+    backgroundColor: '#ECF9FF',
+    borderBottomWidth: 10,
+    color: '#000',
     fontSize: 16
   }
 });
@@ -53,16 +61,29 @@ class Feed extends Component {
     const { repos } = this.props;
     return (
       <View>
-        <Text>Please input search term</Text>
-        <TextInput onChangeText={ this.onChangeSearchTerm } value={ searchTerm } />
-        <Button onPress={ this.handleSearchRepos } title="Search repos">Click me!</Button>
+        <Text style={ styles.searchTitle }>Please input search term:</Text>
+        <TextInput
+          autoCapitalize={ 'none' }
+          onChangeText={ this.onChangeSearchTerm }
+          textAlign={ 'center' } 
+          value={ searchTerm } 
+        />
+        <Button
+          color="#2196F3" 
+          onPress={ this.handleSearchRepos }
+          style={ styles.button } 
+          title="Search repos"
+        />
          <FlatList 
           data={ repos }
+          initialNumToRender={ 30 }
+          ItemSeparatorComponent={ () => <View style={ { width: 10, height: 10, backgroundColor: 'transparent' } } /> }
           renderItem={({ item }) => {
             return (
               <Text style={ styles.flatListItem }>{ item.name }</Text>
             )
           }}
+          style={ styles.flatList }
         />
       </View>
     )

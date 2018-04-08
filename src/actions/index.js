@@ -4,7 +4,7 @@ import { api } from '../../utils/api';
 export default Object.freeze({
   searchRepos: (searchTerm) => (
     dispatch => (
-      fetch(`${api}?q=${searchTerm}`, {
+      fetch(`${api}?q=${searchTerm}&per_page=100`, {
         headers: {
           Accept: 'application/json'
         }
