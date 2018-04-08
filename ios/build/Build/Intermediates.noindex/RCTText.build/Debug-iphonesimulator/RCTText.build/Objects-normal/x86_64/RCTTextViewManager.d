@@ -1,0 +1,36 @@
+dependencies: \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/node_modules/react-native/Libraries/Text/Text/RCTTextViewManager.m \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/node_modules/react-native/Libraries/Text/Text/RCTTextViewManager.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTViewManager.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTEventDispatcher.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/React/UIView+React.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTComponent.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/node_modules/react-native/Libraries/Text/BaseText/RCTBaseTextViewManager.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAccessibilityManager.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTShadowView+Layout.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTShadowView.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUIManager.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUIManagerObserverCoordinator.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/node_modules/react-native/Libraries/Text/Text/RCTTextShadowView.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/node_modules/react-native/Libraries/Text/BaseText/RCTBaseTextShadowView.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/node_modules/react-native/Libraries/Text/RCTTextAttributes.h \
+  /Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/node_modules/react-native/Libraries/Text/Text/RCTTextView.h
