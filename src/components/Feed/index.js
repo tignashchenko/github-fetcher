@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import {
   Button,
   Text,
@@ -6,7 +8,9 @@ import {
   View
 } from 'react-native';
 
-export default class Feed extends Component {
+import repoActions from '../../actions';
+
+class Feed extends Component {
   constructor(props) {
     super(props);
 
@@ -21,14 +25,32 @@ export default class Feed extends Component {
     });
   }
 
+  handleSearchRepos = () => {
+    const { searchTerm } = this.state;
+    const { actions } = this.props;
+    
+    actions.searchRepos(searchTerm);
+    this.setState({
+      searchTerm: ''
+    });
+  }
+
   render() {
     const { searchTerm } = this.state;
     return (
       <View>
         <Text>Please input search term</Text>
         <TextInput onChangeText={ this.onChangeSearchTerm } value={ searchTerm } />
-        <Button title="Search repos">Click me!</Button>
+        <Button onPress={ this.handleSearchRepos } title="Search repos">Click me!</Button>
       </View>
     )
   }
 }
+
+const mapStateToProps = ({ repos }) => ({ repos });
+
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators({ ...repoActions }, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Feed);
