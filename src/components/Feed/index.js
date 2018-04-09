@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   searchButton: {
     backgroundColor: '#2c3e50',
     marginBottom: 35,
-    marginTop: 15,
+    marginTop: 5,
     borderRadius: 7,
   },
   searchButtonText: {
@@ -42,6 +42,13 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     padding: 5,
     opacity: 0.9
+  },
+  picker: {
+    borderWidth: 0.5, 
+    borderColor: '#d6d7da'
+  },
+  spinner: {
+    marginTop: 10
   }
 });
 
@@ -66,14 +73,19 @@ class Feed extends Component {
     
     actions.searchRepos(searchTerm);
     this.setState({
-      pickerSelection: 'Name',
       searchTerm: ''
     });
   }
 
+  handleVisibilityFilterChange = (visibilityFilter, repos) => {
+    const { actions } = this.props;
+
+    actions.sortRepos(visibilityFilter, repos);
+  }
+
   render() {
-    const { pickerSelection, searchTerm } = this.state;
-    const { isLoading, repos } = this.props;
+    const { searchTerm } = this.state;
+    const { isLoading, repos, sortBy } = this.props;
     return (
       <View style={ styles.container }>
         <Text style={ styles.searchTitle }>Please input search term:</Text>
@@ -96,15 +108,15 @@ class Feed extends Component {
         <Text>Sorting by:</Text>
         <Picker
           itemStyle={{ height: 50 }}
-          selectedValue={pickerSelection}
-          style={{ borderWidth: 0.5, borderColor: '#d6d7da' }}
-          onValueChange={(itemValue, itemIndex) => this.setState({pickerSelection: itemValue})}>
+          selectedValue={ sortBy }
+          style={ styles.picker }
+          onValueChange={(itemValue) => this.handleVisibilityFilterChange(itemValue, repos)}>
           <Picker.Item label="Name" value="Name" style={{paddingTop: 5}}/>
           <Picker.Item label="Stars" value="Stars" />
           <Picker.Item label="Forks" value="Forks" style={{paddingBottom: 5}} />
         </Picker>
         { isLoading
-          ? <ActivityIndicator size='large' color='#0000ff' />
+          ? <ActivityIndicator size='large' color='#2c3e50' style={ styles.spinner } />
           : null
         }
          <FlatList 
@@ -123,7 +135,7 @@ class Feed extends Component {
   }
 }
 
-const mapStateToProps = ({ repos, ui: { isLoading } }) => ({ repos, isLoading });
+const mapStateToProps = ({ repos, ui: { isLoading }, visibilityFilter: { sortBy } }) => ({ repos, isLoading, sortBy });
 
 const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators({ ...repoActions }, dispatch)

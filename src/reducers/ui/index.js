@@ -1,6 +1,6 @@
 import types from '../../actions/types';
 
-export default (state = {}, { type, payload }) => {
+export default (state = {}, { type }) => {
   switch (type) {
     case types.SEARCH_REPOS:
       return {

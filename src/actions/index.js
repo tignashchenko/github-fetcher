@@ -27,5 +27,26 @@ export default Object.freeze({
         })
       })
     }
+  ),
+
+  sortRepos: (visibility, repos) => (
+    dispatch => {
+      if (visibility === 'Forks') {
+        dispatch({
+          type: types.SORT_REPOS_BY_FORKS,
+          payload: repos
+        })
+      } else if (visibility === 'Stars') {
+        dispatch({
+          type: types.SORT_REPOS_BY_STARS,
+          payload: repos
+        })
+      } else {
+        dispatch({
+          type: types.SORT_REPOS_BY_NAME,
+          payload: repos
+        })
+      } 
+    }
   )
-})
+});
