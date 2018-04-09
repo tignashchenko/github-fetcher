@@ -3,8 +3,11 @@ import { api } from '../../utils/api';
 
 export default Object.freeze({
   searchRepos: (searchTerm) => (
-    dispatch => (
-      fetch(`${api}?q=${searchTerm}&per_page=100`, {
+    dispatch => {
+      dispatch({
+        type: types.SEARCH_REPOS
+      })
+      return fetch(`${api}?q=${searchTerm}&per_page=100`, {
         headers: {
           Accept: 'application/json'
         }
@@ -12,10 +15,17 @@ export default Object.freeze({
       .then(res => res.json())
       .then(({ items }) => {
         dispatch({
-          type: types.SEARCH_REPOS,
+          type: types.SEARCH_REPOS_SUCCESS,
           payload: items
         })
       })
-    )
+      .catch(err => {
+        dispatch({
+          type: types.SEARCH_REPOS_FAILURE,
+          payload: err,
+          error: true
+        })
+      })
+    }
   )
 })

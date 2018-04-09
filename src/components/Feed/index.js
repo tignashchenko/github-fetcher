@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {
-  Button,
+  ActivityIndicator,
   FlatList,
+  Picker,
   StyleSheet,
   Text,
   TextInput,
@@ -16,8 +17,9 @@ import repoActions from '../../actions';
 console.disableYellowBox = true;
 
 const styles = StyleSheet.create({
-  button: {
-    
+  container: {
+    flex: 1,
+    backgroundColor: '#95a5a6',
   },
   searchTitle: {
     textAlign: 'center',
@@ -25,9 +27,21 @@ const styles = StyleSheet.create({
   },
   flatListItem: {
     backgroundColor: '#ECF9FF',
-    borderBottomWidth: 10,
     color: '#000',
-    fontSize: 16
+    fontSize: 16,
+    opacity: 0.7
+  },
+  searchButton: {
+    backgroundColor: '#2c3e50',
+    marginBottom: 35,
+    marginTop: 15,
+    borderRadius: 7,
+  },
+  searchButtonText: {
+    color: '#fff',
+    textAlign: 'center',
+    padding: 5,
+    opacity: 0.9
   }
 });
 
@@ -52,15 +66,16 @@ class Feed extends Component {
     
     actions.searchRepos(searchTerm);
     this.setState({
+      pickerSelection: 'Name',
       searchTerm: ''
     });
   }
 
   render() {
-    const { searchTerm } = this.state;
-    const { repos } = this.props;
+    const { pickerSelection, searchTerm } = this.state;
+    const { isLoading, repos } = this.props;
     return (
-      <View>
+      <View style={ styles.container }>
         <Text style={ styles.searchTitle }>Please input search term:</Text>
         <TextInput
           autoCapitalize={ 'none' }
@@ -68,16 +83,34 @@ class Feed extends Component {
           textAlign={ 'center' } 
           value={ searchTerm } 
         />
-        <Button
-          color="#2196F3" 
+        <TouchableOpacity
           onPress={ this.handleSearchRepos }
-          style={ styles.button } 
-          title="Search repos"
-        />
+          style={ styles.searchButton }
+        >
+          <Text
+            style={ styles.searchButtonText }
+          >
+            Search for repo
+          </Text>
+        </TouchableOpacity>
+        <Text>Sorting by:</Text>
+        <Picker
+          itemStyle={{ height: 50 }}
+          selectedValue={pickerSelection}
+          style={{ borderWidth: 0.5, borderColor: '#d6d7da' }}
+          onValueChange={(itemValue, itemIndex) => this.setState({pickerSelection: itemValue})}>
+          <Picker.Item label="Name" value="Name" style={{paddingTop: 5}}/>
+          <Picker.Item label="Stars" value="Stars" />
+          <Picker.Item label="Forks" value="Forks" style={{paddingBottom: 5}} />
+        </Picker>
+        { isLoading
+          ? <ActivityIndicator size='large' color='#0000ff' />
+          : null
+        }
          <FlatList 
           data={ repos }
           initialNumToRender={ 30 }
-          ItemSeparatorComponent={ () => <View style={ { width: 10, height: 10, backgroundColor: 'transparent' } } /> }
+          ItemSeparatorComponent={ () => <View style={ { width: 2, height: 2, backgroundColor: 'transparent' } } /> }
           renderItem={({ item }) => {
             return (
               <Text style={ styles.flatListItem }>{ item.name }</Text>
@@ -90,7 +123,7 @@ class Feed extends Component {
   }
 }
 
-const mapStateToProps = ({ repos }) => ({ repos });
+const mapStateToProps = ({ repos, ui: { isLoading } }) => ({ repos, isLoading });
 
 const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators({ ...repoActions }, dispatch)
