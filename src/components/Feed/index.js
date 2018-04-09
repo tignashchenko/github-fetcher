@@ -57,21 +57,35 @@ class Feed extends Component {
     super(props);
 
     this.state = {
+      page: 1,
+      previousSearchTerm: '',
       searchTerm: ''
     };
   }
 
   onChangeSearchTerm = (text) => {
     this.setState({
+      previousSearchTerm: text,
       searchTerm: text
     });
   }
 
+  handleRefresh = () => {
+    const { page, previousSearchTerm } = this.state;
+    const { actions, repos } = this.props;
+
+    this.setState({
+      page: page + 1
+    }, () => {
+      actions.getMoreRepos(page, repos, previousSearchTerm)}
+    )
+  }
+
   handleSearchRepos = () => {
-    const { searchTerm } = this.state;
+    const { page, searchTerm } = this.state;
     const { actions } = this.props;
     
-    actions.searchRepos(searchTerm);
+    actions.searchRepos(page, searchTerm);
     this.setState({
       searchTerm: ''
     });
@@ -85,12 +99,13 @@ class Feed extends Component {
 
   render() {
     const { searchTerm } = this.state;
-    const { isLoading, repos, sortBy } = this.props;
+    const { isLoading, isRefreshing, repos, sortBy } = this.props;
     return (
       <View style={ styles.container }>
         <Text style={ styles.searchTitle }>Please input search term:</Text>
         <TextInput
           autoCapitalize={ 'none' }
+          maxLength={ 30 }
           onChangeText={ this.onChangeSearchTerm }
           textAlign={ 'center' } 
           value={ searchTerm } 
@@ -128,6 +143,8 @@ class Feed extends Component {
               <Text style={ styles.flatListItem }>{ item.name }</Text>
             )
           }}
+          onRefresh={ this.handleRefresh }
+          refreshing={ !!isRefreshing }
           style={ styles.flatList }
         />
       </View>
@@ -135,7 +152,7 @@ class Feed extends Component {
   }
 }
 
-const mapStateToProps = ({ repos, ui: { isLoading }, visibilityFilter: { sortBy } }) => ({ repos, isLoading, sortBy });
+const mapStateToProps = ({ repos, ui: { isLoading, isRefreshing }, visibilityFilter: { sortBy } }) => ({ repos, isLoading, isRefreshing, sortBy });
 
 const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators({ ...repoActions }, dispatch)

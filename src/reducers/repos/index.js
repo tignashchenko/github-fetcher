@@ -29,8 +29,10 @@ export default (state = [], { payload, type }) => {
       });
       return [...sortedRepos];
     }
-      
 
+    case types.GET_MORE_REPOS_SUCCESS:
+      return [...payload];
+  
     default:
       return state;
   }

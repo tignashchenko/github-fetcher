@@ -2,5 +2,9 @@
     {
         "merged": "/Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/android/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
         "source": "/Users/tarasignashchenko/Documents/Programming/genesis/test-assignment/github-fetcher/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/tarasignashchenko/Documents/Programming/test-assignment/github-fetcher/android/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
+        "source": "/Users/tarasignashchenko/Documents/Programming/test-assignment/github-fetcher/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     }
 ]

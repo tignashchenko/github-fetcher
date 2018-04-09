@@ -2,12 +2,38 @@ import types from './types';
 import { api } from '../../utils/api';
 
 export default Object.freeze({
-  searchRepos: (searchTerm) => (
+  getMoreRepos: (page, repos, previousSearchTerm) => (
+    dispatch => {
+      dispatch({
+        type: types.GET_MORE_REPOS
+      })
+      return fetch(`${api}?q=${previousSearchTerm}&page=${page}&per_page=15`, {
+        headers: {
+          Accept: 'application/json'
+        }
+      })
+      .then(res => res.json())
+      .then(({ items }) => {
+        dispatch({
+          type: types.GET_MORE_REPOS_SUCCESS,
+          payload: [...repos, ...items]
+        })
+      })
+      .catch(err => {
+        dispatch({
+          type: types.GET_MORE_REPOS_FAILURE,
+          payload: err,
+          error: true
+        })
+      })
+    }
+  ),  
+  searchRepos: (page, searchTerm) => (
     dispatch => {
       dispatch({
         type: types.SEARCH_REPOS
       })
-      return fetch(`${api}?q=${searchTerm}&per_page=100`, {
+      return fetch(`${api}?q=${searchTerm}&page=${page}&per_page=15`, {
         headers: {
           Accept: 'application/json'
         }
