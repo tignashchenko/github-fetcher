@@ -10,6 +10,7 @@ export default (state = {}, { type }) => {
 
     case types.SEARCH_REPOS_SUCCESS:
     case types.SEARCH_REPOS_FAILURE:
+    case types.GET_REPOS_OFFLINE:
       return {
         isLoading: false,
         isRefreshing: false,

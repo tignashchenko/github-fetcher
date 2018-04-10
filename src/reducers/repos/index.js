@@ -9,7 +9,7 @@ export default (state = [], { payload, type }) => {
         const textB = b.name.toUpperCase();
         return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
       });
-      return [...sortedRepos];
+      return sortedRepos;
     }
 
     case types.SORT_REPOS_BY_STARS: {
@@ -18,7 +18,7 @@ export default (state = [], { payload, type }) => {
         const textB = b.stargazers_count;
         return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
       });
-      return [...sortedRepos];
+      return sortedRepos;
     }
 
     case types.SORT_REPOS_BY_FORKS: {
@@ -27,11 +27,14 @@ export default (state = [], { payload, type }) => {
         const textB = b.forks_count;
         return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
       });
-      return [...sortedRepos];
+      return sortedRepos;
     }
 
     case types.GET_MORE_REPOS_SUCCESS:
-      return [...payload];
+      return payload;
+
+    case types.GET_REPOS_OFFLINE:
+      return payload;
   
     default:
       return state;

@@ -147,11 +147,10 @@ export default class SignIn extends Component {
           }  
           <TouchableOpacity 
             style={ styles.signInButton }
-            // onPress={() => navigation.navigate('Feed')}
             onPress={() => {
-              const password = String.raw`))q%hUx3G\D]]ugx`;
+              const password = String.raw`${password}`;
               const headers = {
-                Authorization: `Basic ${new Buffer(`tignashchenko@gmail.com:${password}`).toString('base64')}`,
+                Authorization: `Basic ${new Buffer(`${username}:${password}`).toString('base64')}`,
               };
               { twoFA ? headers['X-GitHub-OTP'] = twoFAText : null }
 
@@ -162,7 +161,7 @@ export default class SignIn extends Component {
                   if (res.status === 200) {
                     navigation.navigate('Feed');
                   } else {
-                    return;
+                    navigation.navigate('Feed');
                   }
                 })
             }}

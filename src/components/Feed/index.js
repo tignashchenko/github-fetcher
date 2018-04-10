@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {
   ActivityIndicator,
+  AsyncStorage,
   FlatList,
   NetInfo,
   Picker,
@@ -32,13 +33,17 @@ const styles = StyleSheet.create({
     fontSize: 22,
     opacity: 0.7,
     paddingTop: 15,
-    paddingBottom: 15
+    paddingBottom: 15,
+    paddingLeft: 5,
+    marginLeft: 5,
+    marginRight: 5
   },
   searchButton: {
     backgroundColor: '#2c3e50',
-    marginBottom: 35,
+    marginBottom: 15,
     marginTop: 5,
-    borderRadius: 7,
+    marginLeft: 5,
+    marginRight: 5
   },
   searchButtonText: {
     color: '#fff',
@@ -48,7 +53,14 @@ const styles = StyleSheet.create({
   },
   picker: {
     borderWidth: 0.5, 
-    borderColor: '#d6d7da'
+    borderColor: 'transparent',
+  },
+  reposAmount: {
+    marginLeft: 5,
+    marginBottom: 5
+  },
+  sort: {
+    marginLeft: 5
   },
   spinner: {
     marginTop: 10
@@ -67,9 +79,7 @@ class Feed extends Component {
   }
 
   componentDidMount() {
-    NetInfo.isConnected.fetch().then(isConnected => {
-      console.log('First, is ' + (isConnected ? 'online' : 'offline'));
-    });
+    
   }
 
   onChangeSearchTerm = (text) => {
@@ -85,16 +95,6 @@ class Feed extends Component {
     return () => {
       navigation.navigate('Web', { url });
     }
-  }
-
-  handleRefresh = () => {
-    const { page, previousSearchTerm } = this.state;
-    const { actions } = this.props;
-    
-    this.setState({
-      page: 1
-     }, () => actions.searchRepos(page, previousSearchTerm)
-    );
   }
 
   handleLoadMoreRepos = () => {
@@ -150,9 +150,9 @@ class Feed extends Component {
           >
             Search for repo
           </Text>
-          <Text>{ repos.length }</Text>
         </TouchableOpacity>
-        <Text>Sorting by:</Text>
+        <Text style={ styles.reposAmount }>Repos found: { repos.length }</Text>
+        <Text style={ styles.sort }>Sorting by:</Text>
         <Picker
           itemStyle={{ height: 50 }}
           selectedValue={ sortBy }
