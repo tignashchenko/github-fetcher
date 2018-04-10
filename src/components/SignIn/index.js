@@ -8,6 +8,7 @@ import {
   View
 } from 'react-native';
 import { Buffer } from 'buffer';
+import CheckBox from 'react-native-check-box';
 
 const styles = StyleSheet.create({
   container: {
@@ -16,10 +17,12 @@ const styles = StyleSheet.create({
   },
   input: {
     width: 200,
-    height: 30,
+    height: 40,
     marginBottom: 5,
+    paddingLeft: 5,
     backgroundColor: '#ecf0f1',
     color: 'black',
+    textAlignVertical: 'top',
   },
   logoContainer: {
     alignItems: 'center',
@@ -46,6 +49,15 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     padding: 5,
     opacity: 0.9
+  },
+  twoFA: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  twoFATitle: {
+    paddingRight: 3,
+    color: '#fff',
+    opacity: 0.7
   }
 });
 
@@ -56,8 +68,21 @@ export default class SignIn extends Component {
     this.state = {
       username: '',
       password: '',
-      twoFA: ''
+      twoFA: false,
+      twoFAText: ''
     }
+  }
+
+  handleTwoFAStatus = () => {
+    this.setState(prevState => ({
+      twoFA: !prevState.twoFA
+    }))
+  }
+
+  handleTwoFAText = (text) => {
+    this.setState({
+      twoFAText: text
+    })
   }
 
   onChangePassword = (text) => {
@@ -72,7 +97,7 @@ export default class SignIn extends Component {
     });
   }
   render() {
-    const { password, username } = this.state;
+    const { password, twoFA, twoFAText, username } = this.state;
     const { navigation } = this.props;
     return (
       <View style={ styles.container }>
@@ -88,16 +113,38 @@ export default class SignIn extends Component {
             onChangeText={ this.onChangeUsername }
             textAlign={ 'left' } 
             value={ username }
-            style={ styles.input } 
+            style={ styles.input }
+            underlineColorAndroid='rgba(0,0,0,0)' 
           />
           <TextInput
             autoCapitalize={ 'none' }
             maxLength={ 30 }
             onChangeText={ this.onChangePassword }
-            textAlign={ 'center' } 
+            textAlign={ 'left' } 
             value={ password }
-            style={ styles.input } 
+            secureTextEntry={ true }
+            style={ styles.input }
+            underlineColorAndroid='rgba(0,0,0,0)' 
           />
+          <View style={ styles.twoFA }>
+            <Text style={ styles.twoFATitle }>Two-Factor Authentication</Text>
+            <CheckBox
+              onClick={ this.handleTwoFAStatus }
+              isChecked={ twoFA } 
+            />
+          </View>
+          { twoFA
+            ? <TextInput
+              autoCapitalize={ 'none' }
+              maxLength={ 30 }
+              onChangeText={ this.handleTwoFAText }
+              textAlign={ 'left' } 
+              value={ twoFAText }
+              style={ styles.input }
+              underlineColorAndroid='rgba(0,0,0,0)' 
+            />
+            : null
+          }  
           <TouchableOpacity 
             style={ styles.signInButton }
             // onPress={() => navigation.navigate('Feed')}
@@ -105,20 +152,18 @@ export default class SignIn extends Component {
               const password = String.raw`))q%hUx3G\D]]ugx`;
               const headers = {
                 Authorization: `Basic ${new Buffer(`tignashchenko@gmail.com:${password}`).toString('base64')}`,
-                'X-GitHub-OTP': 668976
               };
-              console.log(headers);
+              { twoFA ? headers['X-GitHub-OTP'] = twoFAText : null }
+
               fetch(`https://api.github.com/user`, {
                 headers, 
               })
                 .then(res => {
-                  // if (res.status === 200 && res.url) {
-                  //   this.setState({
-                  //     isAuth: true,
-                  //     url: res.url
-                  //   })
-                  // }
-                  console.log(res);
+                  if (res.status === 200) {
+                    navigation.navigate('Feed');
+                  } else {
+                    return;
+                  }
                 })
             }}
           >

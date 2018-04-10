@@ -138,7 +138,8 @@ class Feed extends Component {
           maxLength={ 30 }
           onChangeText={ this.onChangeSearchTerm }
           textAlign={ 'center' } 
-          value={ searchTerm } 
+          value={ searchTerm }
+          underlineColorAndroid='rgba(0,0,0,0)' 
         />
         <TouchableOpacity
           onPress={ this.handleSearchRepos }
