@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  Button,
   Image,
   StyleSheet,
   Text,
@@ -40,6 +41,14 @@ const styles = StyleSheet.create({
 });
 
 export default class SignIn extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isAuth: false,
+      url: ''
+    }
+  }
   render() {
     const { navigation } = this.props;
     return (
@@ -50,9 +59,10 @@ export default class SignIn extends Component {
             style={ styles.logo } 
           />
           <Text style={ styles.appTitle }>An app for finding GitHub repositories</Text>
-          <TouchableOpacity 
+            <TouchableOpacity 
             style={ styles.signInButton }
-            onPress={() => navigation.navigate('Feed')}
+            // onPress={() => navigation.navigate('Feed')}
+            onPress={}
           >
             <Text style={ styles.signInButtonText }>Sign in with GitHub</Text>
           </TouchableOpacity>

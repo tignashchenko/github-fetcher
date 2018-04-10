@@ -30,7 +30,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#ECF9FF',
     color: '#000',
     fontSize: 22,
-    opacity: 0.7
+    opacity: 0.7,
+    paddingTop: 15,
+    paddingBottom: 15
   },
   searchButton: {
     backgroundColor: '#2c3e50',
@@ -86,13 +88,13 @@ class Feed extends Component {
   }
 
   handleRefresh = () => {
-    // const { page, previousSearchTerm } = this.state;
-    // const { actions } = this.props;
+    const { page, previousSearchTerm } = this.state;
+    const { actions } = this.props;
     
-    // this.setState({
-    //   page: 1
-    //  }, () => actions.searchRepos(page, previousSearchTerm)
-    // );
+    this.setState({
+      page: 1
+     }, () => actions.searchRepos(page, previousSearchTerm)
+    );
   }
 
   handleLoadMoreRepos = () => {
@@ -147,6 +149,7 @@ class Feed extends Component {
           >
             Search for repo
           </Text>
+          <Text>{ repos.length }</Text>
         </TouchableOpacity>
         <Text>Sorting by:</Text>
         <Picker
@@ -164,7 +167,6 @@ class Feed extends Component {
         }
          <FlatList 
           data={ repos }
-          initialNumToRender={ 15 }
           ItemSeparatorComponent={ () => <View style={ { width: 2, height: 2, backgroundColor: 'transparent' } } /> }
           renderItem={({ item }) => {
             return (
@@ -177,9 +179,7 @@ class Feed extends Component {
             )
           }}
           onEndReached={ this.handleLoadMoreRepos }
-          onEndReachedThreshold={ 25 }
-          onRefresh={ this.handleRefresh }
-          refreshing={ false }
+          onEndReachedThreshold={ .40 }
           style={ styles.flatList }
         />
       </View>
