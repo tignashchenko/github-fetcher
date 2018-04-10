@@ -1,0 +1,4 @@
+#Tue Apr 10 11:18:53 EEST 2018
+base.0=/Users/tarasignashchenko/Documents/Programming/test-assignment/github-fetcher/android/app/build/intermediates/transforms/dexMerger/debug/10
+path.0=classes.dex
+renamed.0=classes.dex

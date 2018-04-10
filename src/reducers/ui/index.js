@@ -5,13 +5,14 @@ export default (state = {}, { type }) => {
     case types.SEARCH_REPOS:
       return {
         isLoading: true,
-        isRefreshing: false
+        isRefreshing: true
       }
 
     case types.SEARCH_REPOS_SUCCESS:
     case types.SEARCH_REPOS_FAILURE:
       return {
-        isLoading: false
+        isLoading: false,
+        isRefreshing: false,
       }
 
     case types.GET_MORE_REPOS:

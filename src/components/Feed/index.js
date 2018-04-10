@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import {
   ActivityIndicator,
   FlatList,
+  NetInfo,
   Picker,
   StyleSheet,
   Text,
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
   flatListItem: {
     backgroundColor: '#ECF9FF',
     color: '#000',
-    fontSize: 16,
+    fontSize: 22,
     opacity: 0.7
   },
   searchButton: {
@@ -63,6 +64,12 @@ class Feed extends Component {
     };
   }
 
+  componentDidMount() {
+    NetInfo.isConnected.fetch().then(isConnected => {
+      console.log('First, is ' + (isConnected ? 'online' : 'offline'));
+    });
+  }
+
   onChangeSearchTerm = (text) => {
     this.setState({
       previousSearchTerm: text,
@@ -70,15 +77,36 @@ class Feed extends Component {
     });
   }
 
+  handleOpenRepo = (url) => {
+    const { navigation } = this.props;
+
+    return () => {
+      navigation.navigate('Web', { url });
+    }
+  }
+
   handleRefresh = () => {
+    // const { page, previousSearchTerm } = this.state;
+    // const { actions } = this.props;
+    
+    // this.setState({
+    //   page: 1
+    //  }, () => actions.searchRepos(page, previousSearchTerm)
+    // );
+  }
+
+  handleLoadMoreRepos = () => {
     const { page, previousSearchTerm } = this.state;
     const { actions, repos } = this.props;
 
-    this.setState({
-      page: page + 1
-    }, () => {
-      actions.getMoreRepos(page, repos, previousSearchTerm)}
-    )
+    if (previousSearchTerm) {
+      this.setState({
+        page: page + 1
+      }, () => actions.getMoreRepos(page, repos, previousSearchTerm)
+      );
+    } else {
+      return;
+    }
   }
 
   handleSearchRepos = () => {
@@ -136,15 +164,22 @@ class Feed extends Component {
         }
          <FlatList 
           data={ repos }
-          initialNumToRender={ 30 }
+          initialNumToRender={ 15 }
           ItemSeparatorComponent={ () => <View style={ { width: 2, height: 2, backgroundColor: 'transparent' } } /> }
           renderItem={({ item }) => {
             return (
-              <Text style={ styles.flatListItem }>{ item.name }</Text>
+              <Text
+                onPress={ this.handleOpenRepo(item.html_url) } 
+                style={ styles.flatListItem }
+              >
+                { item.name }
+              </Text>
             )
           }}
+          onEndReached={ this.handleLoadMoreRepos }
+          onEndReachedThreshold={ 25 }
           onRefresh={ this.handleRefresh }
-          refreshing={ !!isRefreshing }
+          refreshing={ false }
           style={ styles.flatList }
         />
       </View>

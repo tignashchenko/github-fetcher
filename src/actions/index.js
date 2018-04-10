@@ -1,3 +1,5 @@
+import { AsyncStorage } from 'react-native';
+
 import types from './types';
 import { api } from '../../utils/api';
 
@@ -18,6 +20,11 @@ export default Object.freeze({
           type: types.GET_MORE_REPOS_SUCCESS,
           payload: [...repos, ...items]
         })
+        try {
+          AsyncStorage.setItem('repos', JSON.stringify([...repos, ...items]));
+        } catch (err) {
+          throw new Error(err);
+        }
       })
       .catch(err => {
         dispatch({
@@ -44,6 +51,11 @@ export default Object.freeze({
           type: types.SEARCH_REPOS_SUCCESS,
           payload: items
         })
+        try {
+          AsyncStorage.setItem('repos', JSON.stringify(items));
+        } catch (err) {
+          throw new Error(err);
+        }
       })
       .catch(err => {
         dispatch({
