@@ -124,7 +124,8 @@ class SignIn extends Component {
             textAlign={ 'left' } 
             value={ username }
             style={ styles.input }
-            underlineColorAndroid='rgba(0,0,0,0)' 
+            underlineColorAndroid='rgba(0,0,0,0)'
+            placeholder={'Username...'}  
           />
           <TextInput
             autoCapitalize={ 'none' }
@@ -134,7 +135,8 @@ class SignIn extends Component {
             value={ password }
             secureTextEntry={ true }
             style={ styles.input }
-            underlineColorAndroid='rgba(0,0,0,0)' 
+            underlineColorAndroid='rgba(0,0,0,0)'
+            placeholder={'Password...'} 
           />
           <View style={ styles.twoFA }>
             <Text style={ styles.twoFATitle }>Two-Factor Authentication</Text>
