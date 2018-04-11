@@ -1,15 +1,44 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { AsyncStorage, StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'react-redux';
 
 import store from './src/store';
-import Routes from './src/routes';
+import SignedIn from './src/routes/SignedIn';
+import SignedOut from './src/routes/SignedOut';
 
-export default App = () => (
-  <Provider store={ store }>
-      <Routes />
-  </Provider>
-)
+const auth = AsyncStorage.getItem('signedIn');
+
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isAuth: false
+    }
+  }
+
+  componentWillMount() {
+    AsyncStorage.getItem('signedIn').then((value) => {
+      this.setState({
+        isAuth: value
+      });
+    })
+    .catch(err => {
+    throw new Error(err);
+    })
+  }
+
+  render() {
+    const{ isAuth } = this.state;
+    const auth = JSON.parse(isAuth);
+    
+    return (
+      <Provider store={ store }>
+        { auth ? <SignedIn /> : <SignedOut /> }
+      </Provider>
+    )
+  }
+}
 
 const styles = StyleSheet.create({
   container: {

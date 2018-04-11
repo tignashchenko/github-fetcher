@@ -1,3 +1,5 @@
+import { AsyncStorage } from 'react-native';
+
 import types from './types';
 
 export default Object.freeze({
@@ -6,6 +8,7 @@ export default Object.freeze({
       dispatch({
         type: types.SIGN_IN_SUCCESS
       })
+      AsyncStorage.setItem('signedIn', 'true')
     }
   ),
 
@@ -22,6 +25,7 @@ export default Object.freeze({
       dispatch({
         type: types.SIGN_OUT
       })
+      AsyncStorage.setItem('signedIn', 'false')
     }
   )
 });

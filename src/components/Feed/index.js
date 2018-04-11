@@ -3,7 +3,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {
   ActivityIndicator,
-  AsyncStorage,
   FlatList,
   NetInfo,
   Picker,
@@ -126,11 +125,6 @@ class Feed extends Component {
 
   handleSignout = () => {
     const { actions, navigation } = this.props;
-    console.log(navigation);
-
-    (async function() {
-      await AsyncStorage.setItem('signedIn', JSON.stringify(false));
-    })();
 
     actions.signOut();
     navigation.navigate('SignIn');
