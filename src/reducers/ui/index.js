@@ -4,27 +4,14 @@ export default (state = {}, { type }) => {
   switch (type) {
     case types.SEARCH_REPOS:
       return {
-        isLoading: true,
-        isRefreshing: true
+        isLoading: true
       }
 
     case types.SEARCH_REPOS_SUCCESS:
     case types.SEARCH_REPOS_FAILURE:
     case types.GET_REPOS_OFFLINE:
       return {
-        isLoading: false,
-        isRefreshing: false,
-      }
-
-    case types.GET_MORE_REPOS:
-      return {
-        isRefreshing: true
-      }
-
-    case types.GET_MORE_REPOS_SUCCESS:
-    case types.GET_MORE_REPOS_FAILURE:
-      return {
-        isRefreshing: false
+        isLoading: false
       }
     
     default:

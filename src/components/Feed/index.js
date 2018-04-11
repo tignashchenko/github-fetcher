@@ -14,7 +14,8 @@ import {
   View
 } from 'react-native';
 
-import repoActions from '../../actions';
+import repoActions from '../../actions/repoActions';
+import authActions from '../../actions/authActions';
 
 console.disableYellowBox = true;
 
@@ -37,6 +38,21 @@ const styles = StyleSheet.create({
     paddingLeft: 5,
     marginLeft: 5,
     marginRight: 5
+  },
+  signOutButtonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end'
+  },
+  signOutButton: {
+    backgroundColor: '#2c3e50',
+    marginRight: 5,
+    marginTop: 10
+  },
+  signOutButtonText: {
+    color: '#fff',
+    textAlign: 'center',
+    opacity: 0.9,
+    padding: 5
   },
   searchButton: {
     backgroundColor: '#2c3e50',
@@ -79,7 +95,18 @@ class Feed extends Component {
   }
 
   componentDidMount() {
+    const { actions } = this.props;
+    NetInfo.getConnectionInfo().then(onlineMode => {
+      if (onlineMode.type === 'unknown' || onlineMode.type === 'none') {
+        (async function() {
+          const data = await AsyncStorage.getItem('repos');
     
+          actions.getReposOffline(JSON.parse(data));
+        })()
+      } else {
+        return;
+      }
+    })
   }
 
   onChangeSearchTerm = (text) => {
@@ -95,6 +122,18 @@ class Feed extends Component {
     return () => {
       navigation.navigate('Web', { url });
     }
+  }
+
+  handleSignout = () => {
+    const { actions, navigation } = this.props;
+    console.log(navigation);
+
+    (async function() {
+      await AsyncStorage.setItem('signedIn', JSON.stringify(false));
+    })();
+
+    actions.signOut();
+    navigation.navigate('SignIn');
   }
 
   handleLoadMoreRepos = () => {
@@ -129,9 +168,17 @@ class Feed extends Component {
 
   render() {
     const { searchTerm } = this.state;
-    const { isLoading, isRefreshing, repos, sortBy } = this.props;
+    const { isLoading, repos, sortBy } = this.props;
     return (
       <View style={ styles.container }>
+        <View style={ styles.signOutButtonContainer }>
+          <TouchableOpacity
+            onPress={ this.handleSignout }
+            style={ styles.signOutButton }
+          >
+            <Text style={ styles.signOutButtonText }>Sign out</Text>
+          </TouchableOpacity>
+        </View>
         <Text style={ styles.searchTitle }>Please input search term:</Text>
         <TextInput
           autoCapitalize={ 'none' }
@@ -145,13 +192,11 @@ class Feed extends Component {
           onPress={ this.handleSearchRepos }
           style={ styles.searchButton }
         >
-          <Text
-            style={ styles.searchButtonText }
-          >
+          <Text style={ styles.searchButtonText }>
             Search for repo
           </Text>
         </TouchableOpacity>
-        <Text style={ styles.reposAmount }>Repos found: { repos.length }</Text>
+        <Text style={ styles.reposAmount }>Repos found: { repos ? repos.length : null }</Text>
         <Text style={ styles.sort }>Sorting by:</Text>
         <Picker
           itemStyle={{ height: 50 }}
@@ -188,10 +233,10 @@ class Feed extends Component {
   }
 }
 
-const mapStateToProps = ({ repos, ui: { isLoading, isRefreshing }, visibilityFilter: { sortBy } }) => ({ repos, isLoading, isRefreshing, sortBy });
+const mapStateToProps = ({ auth: { signedIn }, repos, ui: { isLoading }, visibilityFilter: { sortBy } }) => ({ repos, isLoading, signedIn, sortBy });
 
 const mapDispatchToProps = (dispatch) => ({
-  actions: bindActionCreators({ ...repoActions }, dispatch)
+  actions: bindActionCreators({ ...authActions, ...repoActions }, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Feed);

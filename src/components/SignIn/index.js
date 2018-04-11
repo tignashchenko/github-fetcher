@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import {
+  AsyncStorage,
   Image,
+  Platform,
   StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
   View
 } from 'react-native';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import { Buffer } from 'buffer';
 import CheckBox from 'react-native-check-box';
+import authActions from '../../actions/authActions';
 
 const styles = StyleSheet.create({
   container: {
@@ -61,7 +66,7 @@ const styles = StyleSheet.create({
   }
 });
 
-export default class SignIn extends Component {
+class SignIn extends Component {
   constructor(props) {
     super(props);
 
@@ -98,7 +103,7 @@ export default class SignIn extends Component {
   }
   render() {
     const { password, twoFA, twoFAText, username } = this.state;
-    const { navigation } = this.props;
+    const { actions, navigation } = this.props;
     return (
       <View style={ styles.container }>
         <View style={ styles.logoContainer }>
@@ -148,9 +153,9 @@ export default class SignIn extends Component {
           <TouchableOpacity 
             style={ styles.signInButton }
             onPress={() => {
-              const password = String.raw`${password}`;
+              let userPassword = password.toString();
               const headers = {
-                Authorization: `Basic ${new Buffer(`${username}:${password}`).toString('base64')}`,
+                Authorization: `Basic ${new Buffer(`${username}:${userPassword}`).toString('base64')}`,
               };
               { twoFA ? headers['X-GitHub-OTP'] = twoFAText : null }
 
@@ -159,9 +164,14 @@ export default class SignIn extends Component {
               })
                 .then(res => {
                   if (res.status === 200) {
+                    actions.signInSuccess();
+                    (async function() {
+                      await AsyncStorage.setItem('signedIn', JSON.stringify(true));
+                    })();
                     navigation.navigate('Feed');
                   } else {
-                    navigation.navigate('Feed');
+                    actions.signInFailure();
+                    return;
                   }
                 })
             }}
@@ -173,3 +183,11 @@ export default class SignIn extends Component {
     )
   }
 }
+
+const mapStateToProps = ({ auth: { signedIn } }) => ({ signedIn });
+
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators({ ...authActions }, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

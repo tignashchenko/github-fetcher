@@ -4,11 +4,11 @@ import Feed from '../components/Feed';
 import Web from '../components/Web';
 
 export default Routes = StackNavigator({
-  Feed: { 
-    screen: Feed
-  },
   SignIn: { 
     screen: SignIn 
+  },
+  Feed: { 
+    screen: Feed
   },
   Web: {
     screen: Web
