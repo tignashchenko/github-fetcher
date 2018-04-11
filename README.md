@@ -1,12 +1,10 @@
-This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
-
-Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
+This project was created by Taras Ignashchenko for Genesis.
 
 ## Table of Contents
 
-* [Updating to New Releases](#updating-to-new-releases)
-* [Available Scripts](#available-scripts)
-  * [npm start](#npm-start)
+* [Running application](#running-application)
+* [Application flow](#application-flow)
+  * [sign in](#sign-in)
   * [npm test](#npm-test)
   * [npm run ios](#npm-run-ios)
   * [npm run android](#npm-run-android)
@@ -27,30 +25,17 @@ Below you'll find information about performing common tasks. The most recent ver
   * [iOS Simulator won't open](#ios-simulator-wont-open)
   * [QR Code does not scan](#qr-code-does-not-scan)
 
-## Updating to New Releases
+## Running application
 
-You should only need to update the global installation of `create-react-native-app` very rarely, ideally never.
+You should install local dependencies through 'yarn install'. Application build should be done through Xcode and Android Studio. The current version of this application was successfully built and ran on an iPhone 6 (11.2) and on a Nexus 5X (6.0 Marshmallow and 4.1 Jelly Bean).
 
-Updating the `react-native-scripts` dependency of your app should be as simple as bumping the version number in `package.json` and reinstalling your project's dependencies.
+## Application flow
 
-Upgrading to a new version of React Native requires updating the `react-native`, `react`, and `expo` package versions, and setting the correct `sdkVersion` in `app.json`. See the [versioning guide](https://github.com/react-community/create-react-native-app/blob/master/VERSIONS.md) for up-to-date information about package version compatibility.
+The following is an outline of the application flow and its implementations the user should be made aware of.
 
-## Available Scripts
+### `sign in`
 
-If Yarn was installed when the project was initialized, then dependencies will have been installed via Yarn, and you should probably use it to run these commands as well. Unlike dependency installation, command running syntax is identical for Yarn and NPM at the time of this writing.
-
-### `npm start`
-
-Runs your app in development mode.
-
-Open it in the [Expo app](https://expo.io) on your phone to view it. It will reload if you save edits to your files, and you will see build errors and logs in the terminal.
-
-Sometimes you may need to reset or clear the React Native packager's cache. To do so, you can pass the `--reset-cache` flag to the start script:
-
-```
-npm start --reset-cache
-# or
-yarn start --reset-cache
+The user is presented with a simple sign in page that allows access to the application's core functionality only if the user has a GitHub account. 
 ```
 
 #### `npm test`

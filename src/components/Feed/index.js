@@ -124,6 +124,13 @@ const styles = StyleSheet.create({
   },
   spinner: {
     marginTop: 10
+  },
+  noReposContainer: {
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  noReposText: {
+    fontSize: 50
   }
 });
 
@@ -255,7 +262,9 @@ class Feed extends Component {
           ? <ActivityIndicator size='large' color='#2c3e50' style={ styles.spinner } />
           : null
         }
-         <FlatList 
+        {
+          repos 
+          ? <FlatList 
           data={ repos }
           ItemSeparatorComponent={ () => <View style={ { width: 2, height: 2, backgroundColor: 'transparent' } } /> }
           renderItem={({ item }) => {
@@ -273,6 +282,10 @@ class Feed extends Component {
           onEndReachedThreshold={ .40 }
           style={ styles.flatList }
         />
+        : <View style={ styles.noReposContainer }>
+            <Text style={ styles.noReposText }>O</Text>
+          </View>
+        }
       </View>
     )
   }
