@@ -212,12 +212,13 @@ class Feed extends Component {
           data={ repos }
           ItemSeparatorComponent={ () => <View style={ { width: 2, height: 2, backgroundColor: 'transparent' } } /> }
           renderItem={({ item }) => {
+            const truncatedString = item.name.slice(0, 30);
             return (
               <Text
                 onPress={ this.handleOpenRepo(item.html_url) } 
                 style={ styles.flatListItem }
               >
-                { item.name.slice(0, 30) }
+                { truncatedString }
               </Text>
             )
           }}
