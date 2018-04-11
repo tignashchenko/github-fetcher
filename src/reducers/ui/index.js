@@ -2,6 +2,15 @@ import types from '../../actions/types';
 
 export default (state = {}, { type }) => {
   switch (type) {
+    case types.SIGN_IN:
+      return {
+        isSigningIn: true
+      }
+    case types.SIGN_IN_SUCCESS:
+      return {
+        isSigningIn: false
+      }
+        
     case types.SEARCH_REPOS:
       return {
         isLoading: true

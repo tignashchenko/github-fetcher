@@ -63,6 +63,10 @@ const styles = StyleSheet.create({
     paddingRight: 3,
     color: '#fff',
     opacity: 0.7
+  },
+  validationError: {
+    color: '#ff0000',
+    marginBottom: 12
   }
 });
 
@@ -103,7 +107,7 @@ class SignIn extends Component {
   }
   render() {
     const { password, twoFA, twoFAText, username } = this.state;
-    const { actions, navigation } = this.props;
+    const { actions, navigation, signedIn } = this.props;
     return (
       <View style={ styles.container }>
         <View style={ styles.logoContainer }>
@@ -112,6 +116,7 @@ class SignIn extends Component {
             style={ styles.logo } 
           />
           <Text style={ styles.appTitle }>An app for finding GitHub repositories</Text>
+          { signedIn === false ? <Text style={ styles.validationError }>PLEASE ENTER VALID CREDENTIALS</Text> : null }
           <TextInput
             autoCapitalize={ 'none' }
             maxLength={ 30 }
@@ -157,7 +162,10 @@ class SignIn extends Component {
               const headers = {
                 Authorization: `Basic ${new Buffer(`${username}:${userPassword}`).toString('base64')}`,
               };
+
               { twoFA ? headers['X-GitHub-OTP'] = twoFAText : null }
+
+              actions.signIn();
 
               fetch(`https://api.github.com/user`, {
                 headers, 
@@ -184,7 +192,7 @@ class SignIn extends Component {
   }
 }
 
-const mapStateToProps = ({ auth: { signedIn } }) => ({ signedIn });
+const mapStateToProps = ({ auth: { isSigningIn, signedIn } }) => ({ isSigningIn, signedIn });
 
 const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators({ ...authActions }, dispatch)
