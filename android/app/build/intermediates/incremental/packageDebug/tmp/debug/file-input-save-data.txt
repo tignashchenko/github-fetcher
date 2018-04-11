@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Apr 10 19:28:28 EEST 2018
+#Wed Apr 11 13:24:09 EEST 2018
 17.baseType=DIRECTORY
 4.path=lib/x86/libgnustl_shared.so
 25.base=/Users/tarasignashchenko/Documents/Programming/test-assignment/github-fetcher/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
