@@ -134,8 +134,8 @@ class SignIn extends Component {
           <View style={ styles.twoFA }>
             <Text style={ styles.twoFATitle }>Two-Factor Authentication</Text>
             <CheckBox
-              onClick={ this.handleTwoFAStatus }
               isChecked={ twoFA } 
+              onClick={ this.handleTwoFAStatus }
             />
           </View>
           { twoFA

@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {
   ActivityIndicator,
+  AsyncStorage,
   FlatList,
   NetInfo,
   Picker,
@@ -97,11 +98,13 @@ class Feed extends Component {
     const { actions } = this.props;
     NetInfo.getConnectionInfo().then(onlineMode => {
       if (onlineMode.type === 'unknown' || onlineMode.type === 'none') {
-        (async function() {
-          const data = await AsyncStorage.getItem('repos');
-    
-          actions.getReposOffline(JSON.parse(data));
-        })()
+        const repos = AsyncStorage.getItem('repos').then(repos => {
+          const parsedRepos = JSON.parse(repos);
+          actions.getReposOffline(parsedRepos);
+        })
+        .catch(err => {
+          throw new Error(err);
+        })
       } else {
         return;
       }
@@ -214,7 +217,7 @@ class Feed extends Component {
                 onPress={ this.handleOpenRepo(item.html_url) } 
                 style={ styles.flatListItem }
               >
-                { item.name }
+                { item.name.slice(0, 30) }
               </Text>
             )
           }}
