@@ -5,8 +5,6 @@ This project was created by Taras Ignashchenko for Genesis.
 * `Running application`
 * `Tech stack`
 * `Application flow`
-* `Signing in`
-* `Feed`
  
 ## Tech stack
 
