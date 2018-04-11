@@ -7,6 +7,7 @@ import {
   FlatList,
   NetInfo,
   Picker,
+  Platform,
   StyleSheet,
   Text,
   TextInput,
@@ -24,20 +25,41 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#95a5a6',
   },
-  searchTitle: {
+  searchTitleAndroid: {
+    fontFamily: 'Roboto',
     textAlign: 'center',
     marginBottom: 10
   },
-  flatListItem: {
+  searchTitleIOS: {
+    fontFamily: 'Georgia',
+    textAlign: 'center',
+    marginBottom: 10
+  },
+  flatListItemAndroid: {
     backgroundColor: '#ECF9FF',
     color: '#000',
+    fontFamily: 'Roboto',
     fontSize: 22,
     opacity: 0.7,
     paddingTop: 15,
     paddingBottom: 15,
     paddingLeft: 5,
     marginLeft: 5,
-    marginRight: 5
+    marginRight: 5,
+    opacity: 0.6
+  },
+  flatListItemIOS: {
+    backgroundColor: '#ECF9FF',
+    color: '#000',
+    fontFamily: 'Iowan Old Style',
+    fontSize: 22,
+    opacity: 0.7,
+    paddingTop: 15,
+    paddingBottom: 15,
+    paddingLeft: 5,
+    marginLeft: 5,
+    marginRight: 5,
+    opacity: 0.6
   },
   signOutButtonContainer: {
     flexDirection: 'row',
@@ -71,11 +93,32 @@ const styles = StyleSheet.create({
     borderWidth: 0.5, 
     borderColor: 'transparent',
   },
-  reposAmount: {
+  reposAmountAndroid: {
+    fontFamily: 'Roboto',
     marginLeft: 5,
     marginBottom: 5
   },
-  sort: {
+  reposAmountIOS: {
+    fontFamily: 'Georgia',
+    marginLeft: 5,
+    marginBottom: 5
+  },
+  reposLengthAndroid: {
+    fontFamily: 'Roboto'
+  },
+  reposLengthIOS: {
+    fontFamily: 'Georgia-Bold',
+  },
+  reposAmountContainer: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start'
+  },
+  sortAndroid: {
+    fontFamily: 'Roboto',
+    marginLeft: 5
+  },
+  sortIOS: {
+    fontFamily: 'Georgia',
     marginLeft: 5
   },
   spinner: {
@@ -176,7 +219,7 @@ class Feed extends Component {
             <Text style={ styles.signOutButtonText }>Sign out</Text>
           </TouchableOpacity>
         </View>
-        <Text style={ styles.searchTitle }>Please input search term:</Text>
+        <Text style={ Platform.OS === 'ios' ? styles.searchTitleIOS : styles.searchTitleAndroid }>Please input search term:</Text>
         <TextInput
           autoCapitalize={ 'none' }
           maxLength={ 30 }
@@ -193,8 +236,11 @@ class Feed extends Component {
             Search for repo
           </Text>
         </TouchableOpacity>
-        <Text style={ styles.reposAmount }>Repos found: { repos ? repos.length : null }</Text>
-        <Text style={ styles.sort }>Sorting by:</Text>
+        <View style={ styles.reposAmountContainer }>
+          <Text style={ Platform.OS === 'ios' ? styles.reposAmountIOS : styles.flatListItemAndroid }>Repos found:</Text>
+          <Text style={ Platform.OS === 'ios' ? styles.reposLengthIOS : styles.reposLengthAndroid }> { repos ? repos.length : null } </Text>
+        </View>
+        <Text style={ Platform.OS === 'ios' ? styles.sortIOS : styles.sortAndroid }>Sorting by:</Text>
         <Picker
           itemStyle={{ height: 50 }}
           selectedValue={ sortBy }
@@ -216,7 +262,7 @@ class Feed extends Component {
             return (
               <Text
                 onPress={ this.handleOpenRepo(item.html_url) } 
-                style={ styles.flatListItem }
+                style={ Platform.OS === 'ios' ? styles.flatListItemIOS : styles.flatListItemAndroid }
               >
                 { truncatedString }
               </Text>
