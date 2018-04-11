@@ -8,7 +8,6 @@ export default (state = {}, { type }) => {
       }
 
     case types.SIGN_IN_FAILURE:
-    case types.SIGN_OUT:
       return {
         signedIn: false
       }

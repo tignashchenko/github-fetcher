@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   flatListItemAndroid: {
     backgroundColor: '#ECF9FF',
     color: '#000',
-    fontFamily: 'Roboto',
+    fontFamily: 'monospace',
     fontSize: 22,
     opacity: 0.7,
     paddingTop: 15,
@@ -104,7 +104,8 @@ const styles = StyleSheet.create({
     marginBottom: 5
   },
   reposLengthAndroid: {
-    fontFamily: 'Roboto'
+    fontFamily: 'serif',
+    fontWeight: 'bold'
   },
   reposLengthIOS: {
     fontFamily: 'Georgia-Bold',
@@ -237,7 +238,7 @@ class Feed extends Component {
           </Text>
         </TouchableOpacity>
         <View style={ styles.reposAmountContainer }>
-          <Text style={ Platform.OS === 'ios' ? styles.reposAmountIOS : styles.flatListItemAndroid }>Repos found:</Text>
+          <Text style={ Platform.OS === 'ios' ? styles.reposAmountIOS : styles.reposAmountAndroid }>Repos found:</Text>
           <Text style={ Platform.OS === 'ios' ? styles.reposLengthIOS : styles.reposLengthAndroid }> { repos ? repos.length : null } </Text>
         </View>
         <Text style={ Platform.OS === 'ios' ? styles.sortIOS : styles.sortAndroid }>Sorting by:</Text>

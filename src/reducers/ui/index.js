@@ -7,10 +7,11 @@ export default (state = {}, { type }) => {
         isSigningIn: true
       }
     case types.SIGN_IN_SUCCESS:
+    case types.SIGN_IN_FAILURE:
       return {
         isSigningIn: false
       }
-        
+
     case types.SEARCH_REPOS:
       return {
         isLoading: true
