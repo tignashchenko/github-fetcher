@@ -5,6 +5,7 @@ import {
   ActivityIndicator,
   AsyncStorage,
   FlatList,
+  Image,
   NetInfo,
   Picker,
   Platform,
@@ -49,6 +50,10 @@ const styles = StyleSheet.create({
     opacity: 0.6
   },
   flatListItemIOS: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
     backgroundColor: '#ECF9FF',
     color: '#000',
     fontFamily: 'Iowan Old Style',
@@ -60,6 +65,44 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     marginRight: 5,
     opacity: 0.6
+  },
+  forksStarsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: 160
+  },
+  forksContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: 60
+  },
+  starsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginRight: 5,
+    width: 60
+  },
+  forksImage: {
+    height: 10,
+    width: 10
+  },
+  starsImage: {
+    height: 10,
+    width: 10
+  },
+  forksCountIOS: {
+    fontFamily: 'Iowan Old Style'
+  },
+  forksCountAndroid: {
+    fontFamily: 'monospace'
+  },
+  starsCountIOS: {
+    fontFamily: 'Iowan Old Style'
+  },
+  starsCountAndroid: {
+    fontFamily: 'monospace'
   },
   signOutButtonContainer: {
     flexDirection: 'row',
@@ -270,12 +313,27 @@ class Feed extends Component {
           renderItem={({ item }) => {
             const truncatedString = item.name.slice(0, 30);
             return (
-              <Text
-                onPress={ this.handleOpenRepo(item.html_url) } 
-                style={ Platform.OS === 'ios' ? styles.flatListItemIOS : styles.flatListItemAndroid }
-              >
-                { truncatedString }
-              </Text>
+              <View style={ Platform.OS === 'ios' ? styles.flatListItemIOS : styles.flatListItemAndroid }>
+                <Text onPress={ this.handleOpenRepo(item.html_url) }>
+                  { truncatedString }
+                </Text>
+                <View style={ styles.forksStarsContainer }>
+                  <View style={ styles.forksContainer }>
+                  <Image
+                    style={ styles.forksImage } 
+                    source={ require('../../../public/assets/Fork/code-fork-512.png') } 
+                  />
+                  <Text style={ Platform.OS === 'ios' ? styles.forksCountIOS : styles.forksCountAndroid }>{ item.forks_count }</Text>
+                  </View>
+                  <View style={ styles.starsContainer }>
+                  <Image
+                    style={ styles.starsImage }
+                    source={ require('../../../public/assets/Star/flatIconImage.png') } 
+                  />
+                  <Text style={ Platform.OS === 'ios' ? styles.starsCountIOS : styles.starsCountAndroid }>{ item.stargazers_count }</Text>
+                  </View>
+                </View>
+              </View>
             )
           }}
           onEndReached={ this.handleLoadMoreRepos }
