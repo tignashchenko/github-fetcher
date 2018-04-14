@@ -15,6 +15,7 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
+import PropTypes from 'prop-types';
 
 import repoActions from '../../actions/repoActions';
 import authActions from '../../actions/authActions';
@@ -189,7 +190,9 @@ class Feed extends Component {
   }
 
   componentDidMount() {
+    const { page } = this.state;
     const { actions } = this.props;
+
     NetInfo.getConnectionInfo().then(onlineMode => {
       if (onlineMode.type === 'unknown' || onlineMode.type === 'none') {
         const repos = AsyncStorage.getItem('repos').then(repos => {
@@ -230,11 +233,14 @@ class Feed extends Component {
   handleLoadMoreRepos = () => {
     const { page, previousSearchTerm } = this.state;
     const { actions, repos } = this.props;
+    const { pastSearchTerm } = this.context;
 
-    if (previousSearchTerm) {
+    const searchTerm = previousSearchTerm ? previousSearchTerm : pastSearchTerm;
+
+    if (searchTerm) {
       this.setState({
         page: page + 1
-      }, () => actions.getMoreRepos(page, repos, previousSearchTerm)
+      }, () => actions.getMoreRepos(page, repos, searchTerm)
       );
     } else {
       return;
@@ -244,6 +250,8 @@ class Feed extends Component {
   handleSearchRepos = () => {
     const { page, searchTerm } = this.state;
     const { actions } = this.props;
+
+    AsyncStorage.setItem('searchTerm', JSON.stringify(searchTerm));
     
     actions.searchRepos(page, searchTerm);
     this.setState({
@@ -347,6 +355,10 @@ class Feed extends Component {
       </View>
     )
   }
+}
+
+Feed.contextTypes = {
+  pastSearchTerm: PropTypes.string
 }
 
 const mapStateToProps = ({ auth: { signedIn }, repos, ui: { isLoading }, visibilityFilter: { sortBy } }) => ({ repos, isLoading, signedIn, sortBy });
