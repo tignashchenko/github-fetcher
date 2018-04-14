@@ -4,7 +4,7 @@
             "outputFile": "/Users/tarasignashchenko/Documents/Programming/test-assignment/github-fetcher/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-large-v4/values-large-v4.xml",
             "map": [
                 {
-                    "source": "/Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae6024406852f40e0e855a79fe23c8b5/res/values-large/values-large.xml",
+                    "source": "/Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/2303aaded3db681b15a25fc05f466cae/res/values-large/values-large.xml",
                     "from": {
                         "startLines": "4,7,8,11,12,13,14,15,16,19,20",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

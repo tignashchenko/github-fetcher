@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   AsyncStorage,
   Image,
+  KeyboardAvoidingView,
   Platform,
   StyleSheet,
   Text,
@@ -109,7 +110,11 @@ class SignIn extends Component {
     const { password, twoFA, twoFAText, username } = this.state;
     const { actions, navigation, signedIn } = this.props;
     return (
-      <View style={ styles.container }>
+      <KeyboardAvoidingView 
+        behavior='padding'
+        keyboardVerticalOffset={ 65 } 
+        style={ styles.container }
+      >
         <View style={ styles.logoContainer }>
           <Image 
             source={ require('../../../public/assets/Octocat/Octocat.png') }
@@ -189,7 +194,7 @@ class SignIn extends Component {
             <Text style={ styles.signInButtonText }>Sign in with GitHub</Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </KeyboardAvoidingView>
     )
   }
 }

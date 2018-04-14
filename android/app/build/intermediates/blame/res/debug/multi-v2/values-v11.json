@@ -4,7 +4,7 @@
             "outputFile": "/Users/tarasignashchenko/Documents/Programming/test-assignment/github-fetcher/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml",
             "map": [
                 {
-                    "source": "/Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae6024406852f40e0e855a79fe23c8b5/res/values-v11/values-v11.xml",
+                    "source": "/Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/2303aaded3db681b15a25fc05f466cae/res/values-v11/values-v11.xml",
                     "from": {
                         "startLines": "4,10,16,22,28,34,42,43,44,49,56,58,62,63,64,115,169",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

@@ -4,18 +4,18 @@ ADDED from /Users/tarasignashchenko/Documents/Programming/test-assignment/github
 INJECTED from /Users/tarasignashchenko/Documents/Programming/test-assignment/github-fetcher/android/app/src/main/AndroidManifest.xml:1:1-27:12
 INJECTED from /Users/tarasignashchenko/Documents/Programming/test-assignment/github-fetcher/android/app/src/main/AndroidManifest.xml:1:1-27:12
 INJECTED from /Users/tarasignashchenko/Documents/Programming/test-assignment/github-fetcher/android/app/src/main/AndroidManifest.xml:1:1-27:12
-MERGED from [com.facebook.react:react-native:0.54.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/0ba5ae68ea2062c6c3782877d380e77f/AndroidManifest.xml:2:1-15:12
-MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae6024406852f40e0e855a79fe23c8b5/AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:support-v4:23.0.1] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/support-v4-23.0.1.aar/00546eccd5423619875db1750aa60b07/AndroidManifest.xml:17:1-24:12
-MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/textlayoutbuilder-1.0.0.aar/8e64c1e41e9d73ee650af957802c9d03/AndroidManifest.xml:10:1-18:12
-MERGED from [com.facebook.fresco:fresco:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/fresco-1.3.0.aar/2646b9cdc421276f9e9de8261db5c74c/AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.3.0.aar/8bce99ece1f61454ae6433b1d2f9f18e/AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/04e720dea65ca798cee1c415b75b16a9/AndroidManifest.xml:1:1-4:12
-MERGED from [org.webkit:android-jsc:r174650] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/android-jsc-r174650.aar/85152a0da463357dc633d4fed1216559/AndroidManifest.xml:1:1-3:12
-MERGED from [com.facebook.fresco:drawee:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/drawee-1.3.0.aar/d366b7a26850dda3a83dedeec55ca724/AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.3.0.aar/8ba9f51623f113bc2ef193704580fa2d/AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.3.0.aar/f1a457391950ea97cb44395215c263c0/AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:fbcore:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/fbcore-1.3.0.aar/c36b1d75cd11d895e00e27a282f0a69f/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.react:react-native:0.54.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/7ede97e9a53e889a39986b3ba7cf3dac/AndroidManifest.xml:2:1-15:12
+MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/2303aaded3db681b15a25fc05f466cae/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-v4:23.0.1] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/support-v4-23.0.1.aar/4d95bc51d02c97d102aa708bdd9ae4f2/AndroidManifest.xml:17:1-24:12
+MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/textlayoutbuilder-1.0.0.aar/cb76d1228ee5013a51d5ea4e00e01ca6/AndroidManifest.xml:10:1-18:12
+MERGED from [com.facebook.fresco:fresco:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/fresco-1.3.0.aar/5ac56e82fea85032330c3d0c2f162028/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.3.0.aar/35b5d3b929767adfe70314642688622d/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/0a8bda0a019bc6894343da1633b57e93/AndroidManifest.xml:1:1-4:12
+MERGED from [org.webkit:android-jsc:r174650] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/android-jsc-r174650.aar/18a51a71aa0738d706a9a4a922e7970f/AndroidManifest.xml:1:1-3:12
+MERGED from [com.facebook.fresco:drawee:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/drawee-1.3.0.aar/f5a95eb27fe0fd2640b0ed186310099c/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.3.0.aar/5fba1c46194e91245a7e696d1f033604/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.3.0.aar/e3f098c976bd2e54f1d1d17d42e60a6b/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:fbcore:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/fbcore-1.3.0.aar/719619cec1e42f90d14db9540ae1d18a/AndroidManifest.xml:2:1-9:12
 INJECTED from /Users/tarasignashchenko/Documents/Programming/test-assignment/github-fetcher/android/app/src/main/AndroidManifest.xml:1:1-27:12
 INJECTED from /Users/tarasignashchenko/Documents/Programming/test-assignment/github-fetcher/android/app/src/main/AndroidManifest.xml:1:1-27:12
 INJECTED from /Users/tarasignashchenko/Documents/Programming/test-assignment/github-fetcher/android/app/src/main/AndroidManifest.xml:1:1-27:12
@@ -39,8 +39,8 @@ ADDED from /Users/tarasignashchenko/Documents/Programming/test-assignment/github
 		ADDED from /Users/tarasignashchenko/Documents/Programming/test-assignment/github-fetcher/android/app/src/main/AndroidManifest.xml:4:22-64
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
 ADDED from /Users/tarasignashchenko/Documents/Programming/test-assignment/github-fetcher/android/app/src/main/AndroidManifest.xml:5:5-77
-MERGED from [com.facebook.react:react-native:0.54.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/0ba5ae68ea2062c6c3782877d380e77f/AndroidManifest.xml:11:5-78
-MERGED from [com.facebook.react:react-native:0.54.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/0ba5ae68ea2062c6c3782877d380e77f/AndroidManifest.xml:11:5-78
+MERGED from [com.facebook.react:react-native:0.54.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/7ede97e9a53e889a39986b3ba7cf3dac/AndroidManifest.xml:11:5-78
+MERGED from [com.facebook.react:react-native:0.54.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/7ede97e9a53e889a39986b3ba7cf3dac/AndroidManifest.xml:11:5-78
 	android:name
 		ADDED from /Users/tarasignashchenko/Documents/Programming/test-assignment/github-fetcher/android/app/src/main/AndroidManifest.xml:5:22-75
 uses-permission#android.permission.ACCESS_NETWORK_STATE
@@ -49,16 +49,16 @@ ADDED from /Users/tarasignashchenko/Documents/Programming/test-assignment/github
 		ADDED from /Users/tarasignashchenko/Documents/Programming/test-assignment/github-fetcher/android/app/src/main/AndroidManifest.xml:6:22-76
 application
 ADDED from /Users/tarasignashchenko/Documents/Programming/test-assignment/github-fetcher/android/app/src/main/AndroidManifest.xml:8:5-25:19
-MERGED from [com.facebook.react:react-native:0.54.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/0ba5ae68ea2062c6c3782877d380e77f/AndroidManifest.xml:13:5-20
-MERGED from [com.facebook.react:react-native:0.54.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/0ba5ae68ea2062c6c3782877d380e77f/AndroidManifest.xml:13:5-20
-MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae6024406852f40e0e855a79fe23c8b5/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae6024406852f40e0e855a79fe23c8b5/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.0.1] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/support-v4-23.0.1.aar/00546eccd5423619875db1750aa60b07/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.0.1] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/support-v4-23.0.1.aar/00546eccd5423619875db1750aa60b07/AndroidManifest.xml:22:5-20
-MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/04e720dea65ca798cee1c415b75b16a9/AndroidManifest.xml:3:3-17
-MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/04e720dea65ca798cee1c415b75b16a9/AndroidManifest.xml:3:3-17
-MERGED from [org.webkit:android-jsc:r174650] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/android-jsc-r174650.aar/85152a0da463357dc633d4fed1216559/AndroidManifest.xml:2:3-17
-MERGED from [org.webkit:android-jsc:r174650] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/android-jsc-r174650.aar/85152a0da463357dc633d4fed1216559/AndroidManifest.xml:2:3-17
+MERGED from [com.facebook.react:react-native:0.54.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/7ede97e9a53e889a39986b3ba7cf3dac/AndroidManifest.xml:13:5-20
+MERGED from [com.facebook.react:react-native:0.54.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/7ede97e9a53e889a39986b3ba7cf3dac/AndroidManifest.xml:13:5-20
+MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/2303aaded3db681b15a25fc05f466cae/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/2303aaded3db681b15a25fc05f466cae/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.0.1] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/support-v4-23.0.1.aar/4d95bc51d02c97d102aa708bdd9ae4f2/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.0.1] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/support-v4-23.0.1.aar/4d95bc51d02c97d102aa708bdd9ae4f2/AndroidManifest.xml:22:5-20
+MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/0a8bda0a019bc6894343da1633b57e93/AndroidManifest.xml:3:3-17
+MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/0a8bda0a019bc6894343da1633b57e93/AndroidManifest.xml:3:3-17
+MERGED from [org.webkit:android-jsc:r174650] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/android-jsc-r174650.aar/18a51a71aa0738d706a9a4a922e7970f/AndroidManifest.xml:2:3-17
+MERGED from [org.webkit:android-jsc:r174650] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/android-jsc-r174650.aar/18a51a71aa0738d706a9a4a922e7970f/AndroidManifest.xml:2:3-17
 	android:label
 		ADDED from /Users/tarasignashchenko/Documents/Programming/test-assignment/github-fetcher/android/app/src/main/AndroidManifest.xml:10:7-39
 	android:icon
@@ -97,28 +97,28 @@ uses-sdk
 INJECTED from /Users/tarasignashchenko/Documents/Programming/test-assignment/github-fetcher/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/tarasignashchenko/Documents/Programming/test-assignment/github-fetcher/android/app/src/main/AndroidManifest.xml
 INJECTED from /Users/tarasignashchenko/Documents/Programming/test-assignment/github-fetcher/android/app/src/main/AndroidManifest.xml
-MERGED from [com.facebook.react:react-native:0.54.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/0ba5ae68ea2062c6c3782877d380e77f/AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.react:react-native:0.54.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/0ba5ae68ea2062c6c3782877d380e77f/AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae6024406852f40e0e855a79fe23c8b5/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/ae6024406852f40e0e855a79fe23c8b5/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.0.1] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/support-v4-23.0.1.aar/00546eccd5423619875db1750aa60b07/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.0.1] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/support-v4-23.0.1.aar/00546eccd5423619875db1750aa60b07/AndroidManifest.xml:20:5-43
-MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/textlayoutbuilder-1.0.0.aar/8e64c1e41e9d73ee650af957802c9d03/AndroidManifest.xml:14:5-16:41
-MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/textlayoutbuilder-1.0.0.aar/8e64c1e41e9d73ee650af957802c9d03/AndroidManifest.xml:14:5-16:41
-MERGED from [com.facebook.fresco:fresco:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/fresco-1.3.0.aar/2646b9cdc421276f9e9de8261db5c74c/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fresco:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/fresco-1.3.0.aar/2646b9cdc421276f9e9de8261db5c74c/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.3.0.aar/8bce99ece1f61454ae6433b1d2f9f18e/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.3.0.aar/8bce99ece1f61454ae6433b1d2f9f18e/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/04e720dea65ca798cee1c415b75b16a9/AndroidManifest.xml:2:3-70
-MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/04e720dea65ca798cee1c415b75b16a9/AndroidManifest.xml:2:3-70
-MERGED from [com.facebook.fresco:drawee:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/drawee-1.3.0.aar/d366b7a26850dda3a83dedeec55ca724/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:drawee:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/drawee-1.3.0.aar/d366b7a26850dda3a83dedeec55ca724/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.3.0.aar/8ba9f51623f113bc2ef193704580fa2d/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.3.0.aar/8ba9f51623f113bc2ef193704580fa2d/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.3.0.aar/f1a457391950ea97cb44395215c263c0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.3.0.aar/f1a457391950ea97cb44395215c263c0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fbcore:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/fbcore-1.3.0.aar/c36b1d75cd11d895e00e27a282f0a69f/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fbcore:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/fbcore-1.3.0.aar/c36b1d75cd11d895e00e27a282f0a69f/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.react:react-native:0.54.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/7ede97e9a53e889a39986b3ba7cf3dac/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.54.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/react-native-0.54.0.aar/7ede97e9a53e889a39986b3ba7cf3dac/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/2303aaded3db681b15a25fc05f466cae/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:23.0.1] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/appcompat-v7-23.0.1.aar/2303aaded3db681b15a25fc05f466cae/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.0.1] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/support-v4-23.0.1.aar/4d95bc51d02c97d102aa708bdd9ae4f2/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.0.1] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/support-v4-23.0.1.aar/4d95bc51d02c97d102aa708bdd9ae4f2/AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/textlayoutbuilder-1.0.0.aar/cb76d1228ee5013a51d5ea4e00e01ca6/AndroidManifest.xml:14:5-16:41
+MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/textlayoutbuilder-1.0.0.aar/cb76d1228ee5013a51d5ea4e00e01ca6/AndroidManifest.xml:14:5-16:41
+MERGED from [com.facebook.fresco:fresco:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/fresco-1.3.0.aar/5ac56e82fea85032330c3d0c2f162028/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/fresco-1.3.0.aar/5ac56e82fea85032330c3d0c2f162028/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.3.0.aar/35b5d3b929767adfe70314642688622d/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.3.0.aar/35b5d3b929767adfe70314642688622d/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/0a8bda0a019bc6894343da1633b57e93/AndroidManifest.xml:2:3-70
+MERGED from [com.facebook.soloader:soloader:0.1.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/soloader-0.1.0.aar/0a8bda0a019bc6894343da1633b57e93/AndroidManifest.xml:2:3-70
+MERGED from [com.facebook.fresco:drawee:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/drawee-1.3.0.aar/f5a95eb27fe0fd2640b0ed186310099c/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/drawee-1.3.0.aar/f5a95eb27fe0fd2640b0ed186310099c/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.3.0.aar/5fba1c46194e91245a7e696d1f033604/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.3.0.aar/5fba1c46194e91245a7e696d1f033604/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.3.0.aar/e3f098c976bd2e54f1d1d17d42e60a6b/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.3.0.aar/e3f098c976bd2e54f1d1d17d42e60a6b/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/fbcore-1.3.0.aar/719619cec1e42f90d14db9540ae1d18a/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.3.0] /Users/tarasignashchenko/.gradle/caches/transforms-1/files-1.1/fbcore-1.3.0.aar/719619cec1e42f90d14db9540ae1d18a/AndroidManifest.xml:5:5-7:41
 INJECTED from /Users/tarasignashchenko/Documents/Programming/test-assignment/github-fetcher/android/app/src/main/AndroidManifest.xml
 INJECTED from /Users/tarasignashchenko/Documents/Programming/test-assignment/github-fetcher/android/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
