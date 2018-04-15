@@ -13,9 +13,13 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  View
+  View,
+  WebView
 } from 'react-native';
 import PropTypes from 'prop-types';
+import Modal from 'react-native-modal';
+
+import Repo from '../Repo';
 
 import repoActions from '../../actions/repoActions';
 import authActions from '../../actions/authActions';
@@ -183,6 +187,7 @@ class Feed extends Component {
     super(props);
 
     this.state = {
+      isModalVisible: false,
       page: 1,
       previousSearchTerm: '',
       searchTerm: ''
@@ -208,19 +213,17 @@ class Feed extends Component {
     })
   }
 
+  toggleModal = () => {
+    this.setState({
+      isModalVisible: !this.state.isModalVisible
+    });
+  }
+
   onChangeSearchTerm = (text) => {
     this.setState({
       previousSearchTerm: text,
       searchTerm: text
     });
-  }
-
-  handleOpenRepo = (url) => {
-    const { navigation } = this.props;
-
-    return () => {
-      navigation.navigate('Web', { url });
-    }
   }
 
   handleSignout = () => {
@@ -266,7 +269,7 @@ class Feed extends Component {
   }
 
   render() {
-    const { searchTerm } = this.state;
+    const { isModalVisible, searchTerm } = this.state;
     const { isLoading, repos, sortBy } = this.props;
     return (
       <View style={ styles.container }>
@@ -322,9 +325,18 @@ class Feed extends Component {
             const truncatedString = item.name.slice(0, 30);
             return (
               <View style={ Platform.OS === 'ios' ? styles.flatListItemIOS : styles.flatListItemAndroid }>
-                <Text onPress={ this.handleOpenRepo(item.html_url) }>
-                  { truncatedString }
-                </Text>
+                  <View style={{ flex: 1 }}>
+                    <TouchableOpacity onPress={ this.toggleModal }>
+                      <Text>
+                        { truncatedString }
+                      </Text>
+                    </TouchableOpacity>
+                    <Repo 
+                      isVisible={ isModalVisible }
+                      toggleModal={ this.toggleModal }
+                      url={ item.html_url } 
+                    />
+                  </View>
                 <View style={ styles.forksStarsContainer }>
                   <View style={ styles.forksContainer }>
                   <Image
