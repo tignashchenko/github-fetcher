@@ -15,7 +15,7 @@ import {
   View,
   WebView
 } from 'react-native';
-import PropTypes from 'prop-types';
+import { array, bool, object, string } from 'prop-types';
 import Modal from 'react-native-modal';
 
 import Repo from '../Repo';
@@ -112,6 +112,8 @@ class Feed extends Component {
     actions.sortRepos(visibilityFilter, repos);
   }
 
+  handleKeyExtractor = (item, index) => item.id;
+
   render() {
     const { isModalVisible, searchTerm } = this.state;
     const { isLoading, repos, sortBy } = this.props;
@@ -200,6 +202,7 @@ class Feed extends Component {
               </View>
             )
           }}
+          keyExtractor={ this.handleKeyExtractor }
           onEndReached={ this.handleLoadMoreRepos }
           onEndReachedThreshold={ .40 }
           style={ styles.flatList }
@@ -213,8 +216,15 @@ class Feed extends Component {
   }
 }
 
+Feed.propTypes = {
+  actions: object,
+  isLoading: bool,
+  repos: array,
+  sortBy: string
+}
+
 Feed.contextTypes = {
-  pastSearchTerm: PropTypes.string
+  pastSearchTerm: object
 }
 
 const mapStateToProps = ({ auth: { signedIn }, repos, ui: { isLoading }, visibilityFilter: { sortBy } }) => ({ repos, isLoading, signedIn, sortBy });

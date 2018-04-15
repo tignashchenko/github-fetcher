@@ -13,6 +13,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Buffer } from 'buffer';
 import CheckBox from 'react-native-check-box';
+import { bool, object } from 'prop-types';
 
 import authActions from '../../actions/authActions';
 import styles from './styles';
@@ -144,6 +145,12 @@ class SignIn extends Component {
     )
   }
 }
+
+SignIn.propTypes = {
+  actions: object,
+  navigation: object,
+  signedIn: bool
+};
 
 const mapStateToProps = ({ auth: { isSigningIn, signedIn } }) => ({ isSigningIn, signedIn });
 

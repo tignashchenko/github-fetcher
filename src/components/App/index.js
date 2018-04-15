@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { AsyncStorage, Text, View } from 'react-native';
 import { Provider } from 'react-redux';
-import PropTypes from 'prop-types';
+import { object } from 'prop-types';
 
 import store from '../../store';
 import SignedIn from '../../../src/routes/SignedIn';
@@ -50,5 +50,5 @@ export default class App extends Component {
 }
 
 App.childContextTypes = {
-  pastSearchTerm: PropTypes.string
+  pastSearchTerm: object
 };
