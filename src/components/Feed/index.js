@@ -41,27 +41,14 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 10
   },
-  flatListItemAndroid: {
-    backgroundColor: '#ECF9FF',
-    color: '#000',
-    fontFamily: 'monospace',
-    fontSize: 22,
-    opacity: 0.7,
-    paddingTop: 15,
-    paddingBottom: 15,
-    paddingLeft: 5,
-    marginLeft: 5,
-    marginRight: 5,
-    opacity: 0.6
-  },
-  flatListItemIOS: {
+  flatListItem: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     backgroundColor: '#ECF9FF',
     color: '#000',
-    fontFamily: 'Iowan Old Style',
+    fontFamily: Platform.OS === 'ios' ? 'Iowan Old Style' : 'monospace',
     fontSize: 22,
     opacity: 0.7,
     paddingTop: 15,
@@ -324,7 +311,7 @@ class Feed extends Component {
           renderItem={({ item }) => {
             const truncatedString = item.name.slice(0, 30);
             return (
-              <View style={ Platform.OS === 'ios' ? styles.flatListItemIOS : styles.flatListItemAndroid }>
+              <View style={ styles.flatListItem }>
                   <View style={{ flex: 1 }}>
                     <TouchableOpacity onPress={ this.toggleModal }>
                       <Text>
